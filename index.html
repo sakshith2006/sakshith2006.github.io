@@ -28,35 +28,28 @@ body{
     transition:0.4s;
 }
 
-/* DARK MODE BODY */
+/* DARK MODE */
 body.dark{
     background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
 }
 
-/* DARK MODE TOGGLE */
+/* DARK MODE BUTTON (TOP RIGHT) */
 .toggle{
     position:fixed;
-    top:18px;
-    right:18px;
-    width:46px;
-    height:46px;
-    border-radius:50%;
-    border:none;
+    top:20px;
+    right:20px;
     background:#fff;
-    color:#111;
-    font-size:20px;
+    border:none;
+    padding:10px 16px;
+    border-radius:25px;
+    font-size:18px;
     cursor:pointer;
-    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+    box-shadow:0 6px 15px rgba(0,0,0,0.25);
     z-index:1000;
-    transition:0.3s;
-}
-
-.toggle:hover{
-    transform:scale(1.1);
 }
 
 body.dark .toggle{
-    background:#111;
+    background:#222;
     color:#fff;
 }
 
@@ -76,12 +69,11 @@ body.dark .toggle{
     padding:30px;
     text-align:center;
     box-shadow:0 20px 40px rgba(0,0,0,0.25);
-    transition:0.4s;
 }
 
 body.dark .profile-box{
     background:#1e293b;
-    color:#fff;
+    color:#e5e7eb;
 }
 
 /* PHOTO */
@@ -92,7 +84,6 @@ body.dark .profile-box{
     padding:6px;
     border-radius:50%;
     background:linear-gradient(135deg,#4CAF50,#2196F3);
-    box-shadow:0 0 30px rgba(33,150,243,0.6);
 }
 
 .photo-ring img{
@@ -111,27 +102,20 @@ body.dark .profile-box{
     color:#fff;
     padding:8px 22px;
     border-radius:20px;
-    font-size:13.5px;
+    font-size:13px;
     font-weight:600;
     display:inline-block;
 }
 
-/* NAME */
 .profile-box h2{
     margin-top:18px;
     font-size:24px;
     font-weight:700;
 }
 
-/* SUBTITLE */
 .profile-box p{
     margin-top:4px;
     font-weight:500;
-    color:#444;
-}
-
-body.dark .profile-box p{
-    color:#cbd5e1;
 }
 
 /* SOCIAL */
@@ -140,24 +124,19 @@ body.dark .profile-box p{
 }
 
 .social-links a{
+    width:42px;
+    height:42px;
     display:inline-flex;
     justify-content:center;
     align-items:center;
-    width:42px;
-    height:42px;
-    margin:0 6px;
     border-radius:50%;
+    margin:0 6px;
     background:linear-gradient(135deg,#4CAF50,#2196F3);
     color:#fff;
     font-size:20px;
-    transition:0.3s;
 }
 
-.social-links a:hover{
-    transform:translateY(-4px);
-}
-
-/* PROFILE INFO */
+/* INFO */
 .profile-info{
     text-align:left;
     margin-top:20px;
@@ -168,11 +147,6 @@ body.dark .profile-box p{
     font-size:15px;
 }
 
-.profile-info i{
-    color:#4CAF50;
-    margin-right:8px;
-}
-
 /* RIGHT GRID */
 .right-grid{
     display:grid;
@@ -180,17 +154,11 @@ body.dark .profile-box p{
     gap:25px;
 }
 
-/* BOX */
 .box{
     background:#fff;
     border-radius:20px;
     padding:22px;
     box-shadow:0 15px 30px rgba(0,0,0,0.18);
-    transition:0.3s;
-}
-
-.box:hover{
-    transform:translateY(-8px);
 }
 
 body.dark .box{
@@ -198,29 +166,19 @@ body.dark .box{
     color:#e5e7eb;
 }
 
-/* BOX TITLE */
 .box h3{
     color:#1c7ed6;
     border-left:5px solid #4CAF50;
     padding-left:12px;
     margin-bottom:14px;
-    font-size:20px;
 }
 
-/* CONTENT */
-.box p, .box li{
-    font-size:15px;
-    line-height:1.6;
-}
-
-/* SKILLS */
 .skills span{
     display:inline-block;
     background:linear-gradient(135deg,#43cea2,#185a9d);
     color:#fff;
     padding:9px 16px;
     border-radius:20px;
-    font-size:14px;
     margin:6px 6px 0 0;
 }
 
@@ -243,94 +201,95 @@ body.dark .box{
 
 <div class="container">
 
-    <!-- PROFILE -->
-    <div class="profile-box">
-        <div class="photo-ring">
-            <img src="profile.jpeg" alt="Sakshith Reddy">
-        </div>
-
-        <span class="role-badge">
-            <i class="fas fa-laptop-code"></i> Aspiring Software Engineer
-        </span>
-
-        <h2>Sakshith Reddy Konala</h2>
-        <p>B.Tech Student</p>
-
-        <div class="social-links">
-            <a href="https://github.com/sakshith2006" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-        </div>
-
-        <div class="profile-info">
-            <div><i class="fas fa-envelope"></i> sakshithreddykonala@gmail.com</div>
-            <div><i class="fas fa-user-graduate"></i> B.Tech (2nd Year)</div>
-            <div><i class="fas fa-university"></i> Vasavi Engineering College</div>
-            <div><i class="fas fa-location-dot"></i> Hyderabad, India</div>
-        </div>
+<div class="profile-box">
+    <div class="photo-ring">
+        <img src="profile.jpeg">
     </div>
 
-    <!-- RIGHT -->
-    <div class="right-grid">
+    <span class="role-badge">Aspiring Software Engineer</span>
 
-        <div class="box">
-            <h3><i class="fas fa-user"></i> Profile Summary</h3>
-            <p>Enthusiastic B.Tech student passionate about programming, databases, and problem-solving.</p>
-        </div>
+    <h2>Sakshith Reddy Konala</h2>
+    <p>B.Tech Student</p>
 
-        <div class="box">
-            <h3><i class="fas fa-graduation-cap"></i> Education</h3>
-            <ul>
-                <li>Newton’s High School, Banswada</li>
-                <li>Narayana Junior College, Hyderabad</li>
-                <li>Vasavi Engineering College</li>
-            </ul>
-        </div>
+    <div class="social-links">
+        <a href="https://github.com/sakshith2006" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
 
-        <div class="box">
-            <h3><i class="fas fa-code"></i> Technical Skills</h3>
-            <div class="skills">
-                <span>C</span>
-                <span>Python</span>
-                <span>Java</span>
-                <span>HTML</span>
-                <span>DBMS</span>
-                <span>Data Structures</span>
-            </div>
-        </div>
-
-        <div class="box">
-            <h3><i class="fas fa-diagram-project"></i> Projects</h3>
-            <ul>
-                <li>Personal Portfolio Website</li>
-                <li>Hackathon Team Project</li>
-            </ul>
-        </div>
-
-        <div class="box">
-            <h3><i class="fas fa-certificate"></i> Certifications</h3>
-            <ul>
-                <li>NPTEL – Joy of Computing using Python (Gold / Elite)</li>
-            </ul>
-        </div>
-
-        <div class="box">
-            <h3><i class="fas fa-book"></i> Courses Learned</h3>
-            <ul>
-                <li>Programming in C</li>
-                <li>Python Programming</li>
-                <li>Java Programming</li>
-                <li>Web Development</li>
-                <li>DBMS</li>
-                <li>Data Structures</li>
-            </ul>
-        </div>
-
+    <div class="profile-info">
+        <div>📧 sakshithreddykonala@gmail.com</div>
+        <div>🎓 B.Tech (2nd Year)</div>
+        <div>🏫 Vasavi Engineering College</div>
+        <div>📍 Hyderabad, India</div>
     </div>
 </div>
 
+<div class="right-grid">
+    <div class="box">
+        <h3>Profile Summary</h3>
+        <p>Enthusiastic B.Tech student passionate about programming and problem solving.</p>
+    </div>
+
+    <div class="box">
+        <h3>Education</h3>
+        <ul>
+            <li>Newton’s High School</li>
+            <li>Narayana Junior College</li>
+            <li>Vasavi Engineering College</li>
+        </ul>
+    </div>
+
+    <div class="box">
+        <h3>Technical Skills</h3>
+        <div class="skills">
+            <span>C</span><span>Python</span><span>Java</span><span>HTML</span><span>DBMS</span>
+        </div>
+    </div>
+
+    <div class="box">
+        <h3>Projects</h3>
+        <ul>
+            <li>Personal Portfolio Website</li>
+            <li>Hackathon Team Project</li>
+        </ul>
+    </div>
+
+    <div class="box">
+        <h3>Certifications</h3>
+        <ul>
+            <li>NPTEL – Joy of Computing using Python</li>
+        </ul>
+    </div>
+
+    <div class="box">
+        <h3>Courses Learned</h3>
+        <ul>
+            <li>C</li><li>Python</li><li>Java</li><li>Web Development</li>
+        </ul>
+    </div>
+</div>
+
+</div>
+
 <script>
+const body = document.body;
+const btn = document.querySelector(".toggle");
+
+// load saved theme
+if(localStorage.getItem("theme")==="dark"){
+    body.classList.add("dark");
+    btn.textContent="☀️";
+}
+
 function toggleDark(){
-    document.body.classList.toggle("dark");
+    body.classList.toggle("dark");
+    if(body.classList.contains("dark")){
+        localStorage.setItem("theme","dark");
+        btn.textContent="☀️";
+    }else{
+        localStorage.setItem("theme","light");
+        btn.textContent="🌙";
+    }
 }
 </script>
 
