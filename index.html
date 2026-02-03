@@ -2,151 +2,228 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Sakshith Reddy | Portfolio</title>
+<title>Sakshith Reddy | Profile</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    transition:background 0.3s,color 0.3s;
+}
+
 body{
-    font-family:'Poppins',sans-serif;
     min-height:100vh;
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#4CAF50,#2196F3);
+    display:flex;
+    justify-content:center;
+    align-items:center;
     overflow:hidden;
-    color:#222;
 }
 
-/* STAR CANVAS */
-#stars{
-    position:fixed;
-    top:0;left:0;
-    width:100%;
-    height:100%;
-    z-index:-2;
-    background:black;
-}
-
-/* DARK MODE */
+/* DARK MODE BACKGROUND */
 body.dark{
-    background:#0d1117;
-    color:#eee;
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
 }
-body.dark .profile-box,
-body.dark .box{
-    background:#161b22;
-    color:#eee;
-}
-body.dark h3{color:#58a6ff}
 
-/* DARK MODE BUTTON */
-.dark-toggle{
+/* GALAXY STARS */
+#galaxy{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    overflow:hidden;
+}
+
+.g-star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    opacity:0.8;
+    animation:moveStar linear infinite;
+}
+
+@keyframes moveStar{
+    from{ transform:translateY(0); }
+    to{ transform:translateY(-120vh); }
+}
+
+/* DARK MODE TOGGLE */
+.toggle{
     position:fixed;
     top:15px;
     right:15px;
-    z-index:10;
-    text-align:center;
+    background:#fff;
+    color:#222;
+    padding:8px 12px;
+    border-radius:14px;
     cursor:pointer;
-    color:white;
-}
-.dark-toggle i{
-    font-size:26px;
-}
-.dark-toggle span{
     font-size:12px;
+    font-weight:600;
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+    z-index:1000;
+    text-align:center;
+}
+
+.toggle i{
+    font-size:20px;
     display:block;
+}
+
+.toggle span{
+    font-size:11px;
     margin-top:4px;
 }
 
-/* MAIN */
+body.dark .toggle{
+    background:#1e1e1e;
+    color:#fff;
+}
+
+/* MAIN CONTAINER */
 .container{
+    width:95%;
     max-width:1300px;
-    margin:auto;
-    padding:40px;
     display:grid;
     grid-template-columns:1fr 2fr;
     gap:30px;
 }
 
-/* PROFILE */
+/* PROFILE BOX */
 .profile-box{
-    background:white;
+    background:#fff;
     border-radius:22px;
     padding:30px;
     text-align:center;
-}
-.photo-ring{
-    width:160px;height:160px;
-    margin:auto;
-    border-radius:50%;
-    padding:6px;
-    background:linear-gradient(135deg,#4CAF50,#2196F3);
-}
-.photo-ring img{
-    width:100%;height:100%;
-    border-radius:50%;
-    object-fit:cover;
-    background:white;
-    padding:4px;
-}
-.role-badge{
-    display:inline-block;
-    margin:15px 0;
-    padding:8px 20px;
-    border-radius:20px;
-    background:linear-gradient(135deg,#4CAF50,#2196F3);
-    color:white;
-    font-weight:600;
-}
-.social-links a{
-    margin:0 8px;
-    font-size:22px;
-    color:#2196F3;
+    box-shadow:0 20px 40px rgba(0,0,0,0.25);
 }
 
-/* INFO */
+body.dark .profile-box,
+body.dark .box{
+    background:#1f1f1f;
+    color:#eee;
+}
+
+/* PHOTO */
+.photo-ring{
+    width:160px;
+    height:160px;
+    margin:auto;
+    padding:6px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#4CAF50,#2196F3);
+    box-shadow:0 0 30px rgba(33,150,243,0.6);
+}
+
+.photo-ring img{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    background:#fff;
+    padding:4px;
+    object-fit:cover;
+}
+
+/* ROLE BADGE */
+.role-badge{
+    margin-top:16px;
+    background:linear-gradient(135deg,#4CAF50,#2196F3);
+    color:#fff;
+    padding:8px 20px;
+    border-radius:20px;
+    font-size:13.5px;
+    font-weight:600;
+    display:inline-block;
+}
+
+/* SOCIAL ICONS */
+.social{
+    margin:18px 0;
+}
+
+.social a{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    width:42px;
+    height:42px;
+    margin:0 6px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#4CAF50,#2196F3);
+    color:#fff;
+    font-size:18px;
+    text-decoration:none;
+    box-shadow:0 6px 15px rgba(0,0,0,0.3);
+}
+
+.social a:hover{
+    transform:translateY(-4px);
+}
+
+/* PROFILE INFO */
+.profile-info{
+    text-align:left;
+    margin-top:20px;
+}
+
 .profile-info div{
     margin:10px 0;
+    font-size:15px;
 }
 
 /* RIGHT GRID */
 .right-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:20px;
-}
-.box{
-    background:white;
-    border-radius:18px;
-    padding:20px;
-}
-.box h3{
-    margin-bottom:10px;
-    border-left:5px solid #4CAF50;
-    padding-left:10px;
-}
-.skills span{
-    display:inline-block;
-    padding:8px 14px;
-    border-radius:20px;
-    background:linear-gradient(135deg,#43cea2,#185a9d);
-    color:white;
-    margin:6px;
+    gap:25px;
 }
 
-/* MOBILE */
+/* BOX */
+.box{
+    background:#fff;
+    border-radius:20px;
+    padding:22px;
+    box-shadow:0 15px 30px rgba(0,0,0,0.18);
+}
+
+.box h3{
+    color:#1c7ed6;
+    border-left:4px solid #4CAF50;
+    padding-left:10px;
+    margin-bottom:12px;
+    font-size:19px;
+}
+
+/* SKILLS */
+.skills span{
+    display:inline-block;
+    background:linear-gradient(135deg,#43cea2,#185a9d);
+    color:#fff;
+    padding:9px 16px;
+    border-radius:20px;
+    margin:6px 6px 0 0;
+}
+
+/* RESPONSIVE */
 @media(max-width:900px){
-    .container{grid-template-columns:1fr}
-    .right-grid{grid-template-columns:1fr}
+    .container{ grid-template-columns:1fr; }
+    .right-grid{ grid-template-columns:1fr; }
 }
 </style>
 </head>
 
 <body>
 
-<canvas id="stars"></canvas>
+<!-- GALAXY -->
+<div id="galaxy"></div>
 
 <!-- DARK MODE -->
-<div class="dark-toggle" onclick="toggleDark()">
+<div class="toggle" onclick="toggleDark()">
     <i class="fas fa-moon"></i>
     <span>Dark Mode</span>
 </div>
@@ -154,22 +231,30 @@ body.dark h3{color:#58a6ff}
 <div class="container">
 
 <div class="profile-box">
+
     <div class="photo-ring">
-        <img src="profile.jpeg">
+        <img src="profile.jpeg" alt="Sakshith Reddy">
     </div>
-    <span class="role-badge">Aspiring Software Engineer</span>
+
+    <span class="role-badge">
+        <i class="fas fa-laptop-code"></i> Aspiring Software Engineer
+    </span>
+
     <h2>Sakshith Reddy Konala</h2>
     <p>B.Tech Student</p>
 
-    <div class="social-links">
+    <!-- SOCIAL LINKS -->
+    <div class="social">
+        <a href="mailto:sakshithreddykonala@gmail.com"><i class="fas fa-envelope"></i></a>
         <a href="https://github.com/sakshith2006" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/sakshith-reddy-konala-0b5952338" target="_blank"><i class="fab fa-linkedin-in"></i></a>
     </div>
 
     <div class="profile-info">
-        <div>📧 sakshithreddykonala@gmail.com</div>
-        <div>🎓 B.Tech (2nd Year)</div>
-        <div>🏫 Vasavi Engineering College</div>
-        <div>📍 Hyderabad, India</div>
+        <div><i class="fas fa-envelope"></i> sakshithreddykonala@gmail.com</div>
+        <div><i class="fas fa-user-graduate"></i> B.Tech (2nd Year)</div>
+        <div><i class="fas fa-university"></i> Vasavi Engineering College</div>
+        <div><i class="fas fa-location-dot"></i> Hyderabad, India</div>
     </div>
 </div>
 
@@ -177,14 +262,14 @@ body.dark h3{color:#58a6ff}
 
 <div class="box">
 <h3>Profile Summary</h3>
-<p>Enthusiastic student passionate about programming and problem-solving.</p>
+<p>Enthusiastic B.Tech student with strong interest in programming and problem-solving.</p>
 </div>
 
 <div class="box">
 <h3>Education</h3>
 <ul>
-<li>Newton’s High School</li>
-<li>Narayana Junior College</li>
+<li>Newton’s High School, Banswada</li>
+<li>Narayana Junior College, Hyderabad</li>
 <li>Vasavi Engineering College</li>
 </ul>
 </div>
@@ -198,17 +283,17 @@ body.dark h3{color:#58a6ff}
 </div>
 
 <div class="box">
-<h3>Projects</h3>
+<h3>Achievements</h3>
 <ul>
-<li>Personal Portfolio Website</li>
-<li>Hackathon Team Project</li>
+<li>Participated in college-level hackathons</li>
+<li>Team-based coding experience</li>
 </ul>
 </div>
 
 <div class="box">
 <h3>Certifications</h3>
 <ul>
-<li>NPTEL – Joy of Computing using Python (Gold)</li>
+<li>NPTEL – Joy of Computing using Python (Gold / Elite)</li>
 </ul>
 </div>
 
@@ -228,38 +313,20 @@ body.dark h3{color:#58a6ff}
 </div>
 
 <script>
-/* DARK MODE */
 function toggleDark(){
     document.body.classList.toggle("dark");
 }
 
-/* STARS */
-const canvas=document.getElementById("stars");
-const ctx=canvas.getContext("2d");
-canvas.width=innerWidth;
-canvas.height=innerHeight;
-
-let stars=[];
-for(let i=0;i<200;i++){
-    stars.push({
-        x:Math.random()*canvas.width,
-        y:Math.random()*canvas.height,
-        r:Math.random()*1.5
-    });
+/* CREATE GALAXY STARS */
+const galaxy=document.getElementById("galaxy");
+for(let i=0;i<120;i++){
+    let s=document.createElement("div");
+    s.className="g-star";
+    s.style.left=Math.random()*100+"%";
+    s.style.top=Math.random()*100+"%";
+    s.style.animationDuration=(5+Math.random()*10)+"s";
+    galaxy.appendChild(s);
 }
-function draw(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    ctx.fillStyle="white";
-    stars.forEach(s=>{
-        ctx.beginPath();
-        ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
-        ctx.fill();
-        s.y+=0.2;
-        if(s.y>canvas.height) s.y=0;
-    });
-    requestAnimationFrame(draw);
-}
-draw();
 </script>
 
 </body>
