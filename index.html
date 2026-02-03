@@ -18,40 +18,39 @@
 }
 
 body{
-    min-height:100vh;
     font-family:'Poppins',sans-serif;
+    min-height:100vh;
     background:linear-gradient(135deg,#4CAF50,#2196F3);
     display:flex;
     justify-content:center;
     align-items:center;
-    padding:30px;
+    padding:40px;
     transition:0.4s;
 }
 
-/* ===== DARK MODE ===== */
+/* ================= DARK MODE ================= */
 body.dark{
-    background:linear-gradient(135deg,#121212,#1e1e1e);
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
 }
 
 body.dark .profile-box,
 body.dark .box{
-    background:#1f1f1f;
-    color:#eaeaea;
+    background:#1e1e1e;
+    color:#eee;
 }
 
 body.dark .box p,
 body.dark .box li,
-body.dark .profile-box p,
 body.dark .profile-info div{
-    color:#d0d0d0;
+    color:#ddd;
 }
 
 body.dark .box h3{
-    color:#90caf9;
-    border-left-color:#64b5f6;
+    color:#4dabf7;
+    border-left-color:#4dabf7;
 }
 
-/* ===== DARK MODE BUTTON (TOP RIGHT) ===== */
+/* ================= DARK TOGGLE ================= */
 .dark-toggle{
     position:fixed;
     top:20px;
@@ -63,8 +62,7 @@ body.dark .box h3{
     cursor:pointer;
     text-align:center;
     box-shadow:0 10px 25px rgba(0,0,0,0.25);
-    transition:0.3s;
-    z-index:1000;
+    z-index:9999;
 }
 
 .dark-toggle i{
@@ -83,7 +81,7 @@ body.dark .dark-toggle{
     color:#fff;
 }
 
-/* ===== MAIN CONTAINER ===== */
+/* ================= MAIN LAYOUT ================= */
 .container{
     width:100%;
     max-width:1300px;
@@ -92,7 +90,7 @@ body.dark .dark-toggle{
     gap:30px;
 }
 
-/* ===== PROFILE BOX ===== */
+/* ================= PROFILE ================= */
 .profile-box{
     background:#fff;
     border-radius:22px;
@@ -101,7 +99,6 @@ body.dark .dark-toggle{
     box-shadow:0 20px 40px rgba(0,0,0,0.25);
 }
 
-/* PHOTO */
 .photo-ring{
     width:160px;
     height:160px;
@@ -120,7 +117,6 @@ body.dark .dark-toggle{
     padding:4px;
 }
 
-/* ROLE */
 .role-badge{
     margin-top:18px;
     background:linear-gradient(135deg,#4CAF50,#2196F3);
@@ -139,29 +135,32 @@ body.dark .dark-toggle{
 }
 
 .profile-box p{
-    margin-top:5px;
+    color:#555;
     font-weight:500;
 }
 
-/* SOCIAL */
 .social-links{
-    margin:15px 0;
+    margin:15px 0 20px;
 }
 
 .social-links a{
-    width:40px;
-    height:40px;
+    width:42px;
+    height:42px;
     display:inline-flex;
     justify-content:center;
     align-items:center;
     border-radius:50%;
-    margin:0 6px;
     background:linear-gradient(135deg,#4CAF50,#2196F3);
     color:#fff;
-    font-size:18px;
+    font-size:20px;
+    margin:0 6px;
+    transition:0.3s;
 }
 
-/* INFO */
+.social-links a:hover{
+    transform:translateY(-4px);
+}
+
 .profile-info{
     text-align:left;
     margin-top:20px;
@@ -169,15 +168,10 @@ body.dark .dark-toggle{
 
 .profile-info div{
     margin:10px 0;
-    font-size:14.5px;
+    font-size:15px;
 }
 
-.profile-info i{
-    margin-right:8px;
-    color:#2196F3;
-}
-
-/* ===== RIGHT GRID ===== */
+/* ================= RIGHT GRID ================= */
 .right-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -197,33 +191,36 @@ body.dark .dark-toggle{
 }
 
 .box h3{
-    font-size:18px;
-    margin-bottom:12px;
+    font-size:20px;
+    font-weight:700;
+    color:#1c7ed6;
     border-left:5px solid #4CAF50;
-    padding-left:10px;
+    padding-left:12px;
+    margin-bottom:12px;
 }
 
-.box p, .box li{
-    font-size:14.5px;
+.box p,.box li{
+    font-size:15px;
     line-height:1.6;
 }
 
 .box ul{
-    padding-left:18px;
+    padding-left:20px;
 }
 
-/* SKILLS */
+/* ================= SKILLS ================= */
 .skills span{
     display:inline-block;
     background:linear-gradient(135deg,#43cea2,#185a9d);
     color:#fff;
-    padding:7px 14px;
+    padding:8px 14px;
     border-radius:18px;
     margin:6px 6px 0 0;
-    font-size:13px;
+    font-size:14px;
+    font-weight:600;
 }
 
-/* RESPONSIVE */
+/* ================= RESPONSIVE ================= */
 @media(max-width:900px){
     .container{
         grid-template-columns:1fr;
@@ -258,22 +255,23 @@ body.dark .dark-toggle{
 
     <div class="social-links">
         <a href="https://github.com/sakshith2006" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
     </div>
 
     <div class="profile-info">
-        <div><i class="fas fa-envelope"></i> sakshithreddykonala@gmail.com</div>
-        <div><i class="fas fa-user-graduate"></i> B.Tech (2nd Year)</div>
-        <div><i class="fas fa-university"></i> Vasavi Engineering College</div>
-        <div><i class="fas fa-location-dot"></i> Hyderabad, India</div>
+        <div>📧 sakshithreddykonala@gmail.com</div>
+        <div>🎓 B.Tech (2nd Year)</div>
+        <div>🏫 Vasavi Engineering College</div>
+        <div>📍 Hyderabad, India</div>
     </div>
 </div>
 
-<!-- RIGHT -->
+<!-- CONTENT -->
 <div class="right-grid">
 
 <div class="box">
 <h3>Profile Summary</h3>
-<p>Enthusiastic B.Tech student passionate about programming, databases, and problem-solving.</p>
+<p>Enthusiastic B.Tech student passionate about programming, data structures, and problem-solving with hands-on coding experience.</p>
 </div>
 
 <div class="box">
@@ -296,15 +294,15 @@ body.dark .dark-toggle{
 <div class="box">
 <h3>Projects</h3>
 <ul>
-<li>Personal Portfolio Website</li>
-<li>Hackathon Team Project</li>
+<li>Personal Portfolio Website (HTML & CSS)</li>
+<li>College Hackathon Team Project</li>
 </ul>
 </div>
 
 <div class="box">
 <h3>Certifications</h3>
 <ul>
-<li>NPTEL – Joy of Computing using Python (Gold / Elite)</li>
+<li>NPTEL – The Joy of Computing using Python (Gold / Elite)</li>
 </ul>
 </div>
 
@@ -326,24 +324,24 @@ body.dark .dark-toggle{
 <script>
 function toggleDark(){
     document.body.classList.toggle("dark");
-
-    const icon = document.getElementById("darkIcon");
-    const text = document.getElementById("darkText");
+    const icon=document.getElementById("darkIcon");
+    const text=document.getElementById("darkText");
 
     if(document.body.classList.contains("dark")){
-        icon.className = "fas fa-sun";
-        text.innerText = "Light Mode";
+        icon.className="fas fa-sun";
+        text.innerText="Light Mode";
         localStorage.setItem("mode","dark");
     }else{
-        icon.className = "fas fa-moon";
-        text.innerText = "Dark Mode";
+        icon.className="fas fa-moon";
+        text.innerText="Dark Mode";
         localStorage.setItem("mode","light");
     }
 }
 
-/* KEEP MODE AFTER REFRESH */
 if(localStorage.getItem("mode")==="dark"){
-    toggleDark();
+    document.body.classList.add("dark");
+    document.getElementById("darkIcon").className="fas fa-sun";
+    document.getElementById("darkText").innerText="Light Mode";
 }
 </script>
 
