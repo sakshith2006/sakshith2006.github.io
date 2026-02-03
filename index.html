@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sakshith Reddy | Profile</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    transition:background 0.3s,color 0.3s;
+}
+
+body{
+    min-height:100vh;
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#4CAF50,#2196F3);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* DARK MODE BACKGROUND */
+body.dark{
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+}
+
+/* DARK MODE TOGGLE */
+.toggle{
+    position:fixed;
+    top:20px;
+    right:20px;
+    background:#fff;
+    color:#222;
+    padding:10px 18px;
+    border-radius:25px;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:600;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    z-index:1000;
+}
+
+body.dark .toggle{
+    background:#1e1e1e;
+    color:#fff;
+}
+
+/* MAIN CONTAINER */
+.container{
+    width:95%;
+    max-width:1300px;
+    display:grid;
+    grid-template-columns:1fr 2fr;
+    gap:30px;
+}
+
+/* PROFILE BOX */
+.profile-box{
+    background:#fff;
+    border-radius:22px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 20px 40px rgba(0,0,0,0.25);
+    position:relative;
+    overflow:hidden;
+}
+
+body.dark .profile-box,
+body.dark .box{
+    background:#1f1f1f;
+    color:#eee;
+}
+
+/* PHOTO */
+.photo-wrapper{
+    position:relative;
+    width:200px;
+    height:200px;
+    margin:auto;
+}
+
+/* STARS */
+.star{
+    position:absolute;
+    font-size:26px;
+    color:gold;
+    opacity:0.7;
+    animation:floatStar 10s linear infinite;
+}
+
+.star:nth-child(1){ top:10%; left:15%; }
+.star:nth-child(2){ top:70%; left:20%; font-size:34px; }
+.star:nth-child(3){ top:30%; left:75%; }
+.star:nth-child(4){ top:80%; left:65%; }
+
+@keyframes floatStar{
+    from{ transform:translateY(0) rotate(0deg); }
+    to{ transform:translateY(-40px) rotate(360deg); }
+}
+
+/* PHOTO RING */
+.photo-ring{
+    width:160px;
+    height:160px;
+    margin:auto;
+    padding:6px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#4CAF50,#2196F3);
+    box-shadow:0 0 30px rgba(33,150,243,0.6);
+}
+
+.photo-ring img{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    background:#fff;
+    padding:4px;
+    object-fit:cover;
+}
+
+/* ROLE BADGE */
+.role-badge{
+    margin-top:16px;
+    background:linear-gradient(135deg,#4CAF50,#2196F3);
+    color:#fff;
+    padding:8px 20px;
+    border-radius:20px;
+    font-size:13.5px;
+    font-weight:600;
+    display:inline-block;
+}
+
+/* NAME */
+.profile-box h2{
+    margin-top:18px;
+    font-weight:700;
+    letter-spacing:0.6px;
+}
+
+/* SUBTITLE */
+.profile-box p{
+    margin-bottom:18px;
+    font-weight:500;
+    color:#555;
+}
+
+body.dark .profile-box p{
+    color:#ccc;
+}
+
+/* PROFILE INFO */
+.profile-info{
+    text-align:left;
+    margin-top:20px;
+}
+
+.profile-info div{
+    margin:10px 0;
+    font-size:15px;
+    font-weight:500;
+}
+
+.profile-info i{
+    color:#4dabf7;
+    margin-right:8px;
+}
+
+.profile-info span{
+    font-weight:600;
+}
+
+/* RIGHT GRID */
+.right-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+/* BOX */
+.box{
+    background:#fff;
+    border-radius:20px;
+    padding:22px;
+    box-shadow:0 15px 30px rgba(0,0,0,0.18);
+}
+
+.box:hover{
+    transform:translateY(-6px);
+}
+
+/* BOX TITLES */
+.box h3{
+    color:#1c7ed6;
+    border-left:4px solid #4CAF50;
+    padding-left:10px;
+    margin-bottom:12px;
+    font-size:19px;
+    font-weight:600;
+}
+
+.box p,.box li{
+    font-size:15px;
+    line-height:1.65;
+    font-weight:500;
+}
+
+body.dark .box p,
+body.dark .box li{
+    color:#ddd;
+}
+
+/* SKILLS */
+.skills span{
+    display:inline-block;
+    background:linear-gradient(135deg,#43cea2,#185a9d);
+    color:#fff;
+    padding:9px 16px;
+    border-radius:20px;
+    font-size:14.5px;
+    font-weight:600;
+    margin:6px 6px 0 0;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .container{
+        grid-template-columns:1fr;
+    }
+    .right-grid{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- DARK MODE BUTTON -->
+<div class="toggle" onclick="toggleDark()">
+    <i class="fas fa-moon"></i> Dark Mode
+</div>
+
+<div class="container">
+
+<!-- PROFILE BOX -->
+<div class="profile-box">
+
+    <div class="photo-wrapper">
+        <div class="star">★</div>
+        <div class="star">★</div>
+        <div class="star">★</div>
+        <div class="star">★</div>
+
+        <div class="photo-ring">
+            <img src="profile.jpeg" alt="Sakshith Reddy">
+        </div>
+    </div>
+
+    <span class="role-badge">
+        <i class="fas fa-laptop-code"></i> Aspiring Software Engineer
+    </span>
+
+    <h2>Sakshith Reddy Konala</h2>
+    <p>B.Tech Student</p>
+
+    <div class="profile-info">
+        <div><i class="fas fa-envelope"></i> <span>Email:</span> sakshithreddykonala@gmail.com</div>
+        <div><i class="fas fa-user-graduate"></i> <span>Education:</span> B.Tech (2nd Year)</div>
+        <div><i class="fas fa-university"></i> <span>College:</span> Vasavi Engineering College</div>
+        <div><i class="fas fa-location-dot"></i> <span>Location:</span> Hyderabad, India</div>
+    </div>
+</div>
+
+<!-- RIGHT CONTENT -->
+<div class="right-grid">
+
+<div class="box">
+<h3><i class="fas fa-user"></i> Profile Summary</h3>
+<p>Enthusiastic B.Tech student with strong interest in programming and problem-solving.</p>
+</div>
+
+<div class="box">
+<h3><i class="fas fa-graduation-cap"></i> Education</h3>
+<ul>
+<li>Newton’s High School, Banswada</li>
+<li>Narayana Junior College, Hyderabad</li>
+<li>Vasavi Engineering College</li>
+</ul>
+</div>
+
+<div class="box">
+<h3><i class="fas fa-code"></i> Technical Skills</h3>
+<div class="skills">
+<span>C</span><span>Python</span><span>Java</span>
+<span>HTML</span><span>DBMS</span><span>Data Structures</span>
+</div>
+</div>
+
+<div class="box">
+<h3><i class="fas fa-trophy"></i> Achievements</h3>
+<ul>
+<li>Participated in college-level hackathons</li>
+<li>Team-based coding experience</li>
+</ul>
+</div>
+
+<div class="box">
+<h3><i class="fas fa-certificate"></i> Certifications</h3>
+<ul>
+<li>NPTEL – The Joy of Computing using Python (Gold / Elite)</li>
+</ul>
+</div>
+
+<div class="box">
+<h3><i class="fas fa-book"></i> Courses Learned</h3>
+<ul>
+<li>Programming in C</li>
+<li>Python Programming</li>
+<li>Java Programming</li>
+<li>Web Development (HTML)</li>
+<li>DBMS</li>
+<li>Data Structures</li>
+</ul>
+</div>
+
+</div>
+</div>
+
+<script>
+function toggleDark(){
+    document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>
