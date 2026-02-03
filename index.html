@@ -4,258 +4,165 @@
 <meta charset="UTF-8">
 <title>Sakshith Reddy | Portfolio</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
+*{margin:0;padding:0;box-sizing:border-box}
 body{
     font-family:'Poppins',sans-serif;
     min-height:100vh;
-    background:linear-gradient(135deg,#4CAF50,#2196F3);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:40px;
-    transition:0.4s;
+    overflow:hidden;
+    color:#222;
 }
 
-/* ================= DARK MODE ================= */
+/* STAR CANVAS */
+#stars{
+    position:fixed;
+    top:0;left:0;
+    width:100%;
+    height:100%;
+    z-index:-2;
+    background:black;
+}
+
+/* DARK MODE */
 body.dark{
-    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-}
-
-body.dark .profile-box,
-body.dark .box{
-    background:#1e1e1e;
+    background:#0d1117;
     color:#eee;
 }
-
-body.dark .box p,
-body.dark .box li,
-body.dark .profile-info div{
-    color:#ddd;
+body.dark .profile-box,
+body.dark .box{
+    background:#161b22;
+    color:#eee;
 }
+body.dark h3{color:#58a6ff}
 
-body.dark .box h3{
-    color:#4dabf7;
-    border-left-color:#4dabf7;
-}
-
-/* ================= DARK TOGGLE ================= */
+/* DARK MODE BUTTON */
 .dark-toggle{
     position:fixed;
-    top:20px;
-    right:20px;
-    background:#fff;
-    color:#222;
-    padding:10px 12px;
-    border-radius:14px;
-    cursor:pointer;
+    top:15px;
+    right:15px;
+    z-index:10;
     text-align:center;
-    box-shadow:0 10px 25px rgba(0,0,0,0.25);
-    z-index:9999;
+    cursor:pointer;
+    color:white;
 }
-
 .dark-toggle i{
-    font-size:20px;
+    font-size:26px;
 }
-
 .dark-toggle span{
-    display:block;
     font-size:12px;
+    display:block;
     margin-top:4px;
-    font-weight:600;
 }
 
-body.dark .dark-toggle{
-    background:#222;
-    color:#fff;
-}
-
-/* ================= MAIN LAYOUT ================= */
+/* MAIN */
 .container{
-    width:100%;
     max-width:1300px;
+    margin:auto;
+    padding:40px;
     display:grid;
     grid-template-columns:1fr 2fr;
     gap:30px;
 }
 
-/* ================= PROFILE ================= */
+/* PROFILE */
 .profile-box{
-    background:#fff;
+    background:white;
     border-radius:22px;
     padding:30px;
     text-align:center;
-    box-shadow:0 20px 40px rgba(0,0,0,0.25);
 }
-
 .photo-ring{
-    width:160px;
-    height:160px;
+    width:160px;height:160px;
     margin:auto;
-    padding:6px;
     border-radius:50%;
+    padding:6px;
     background:linear-gradient(135deg,#4CAF50,#2196F3);
 }
-
 .photo-ring img{
-    width:100%;
-    height:100%;
+    width:100%;height:100%;
     border-radius:50%;
     object-fit:cover;
-    background:#fff;
+    background:white;
     padding:4px;
 }
-
 .role-badge{
-    margin-top:18px;
-    background:linear-gradient(135deg,#4CAF50,#2196F3);
-    color:#fff;
-    padding:8px 22px;
-    border-radius:20px;
-    font-size:13px;
-    font-weight:600;
     display:inline-block;
-}
-
-.profile-box h2{
-    margin-top:18px;
-    font-size:24px;
-    font-weight:700;
-}
-
-.profile-box p{
-    color:#555;
-    font-weight:500;
-}
-
-.social-links{
-    margin:15px 0 20px;
-}
-
-.social-links a{
-    width:42px;
-    height:42px;
-    display:inline-flex;
-    justify-content:center;
-    align-items:center;
-    border-radius:50%;
+    margin:15px 0;
+    padding:8px 20px;
+    border-radius:20px;
     background:linear-gradient(135deg,#4CAF50,#2196F3);
-    color:#fff;
-    font-size:20px;
-    margin:0 6px;
-    transition:0.3s;
+    color:white;
+    font-weight:600;
+}
+.social-links a{
+    margin:0 8px;
+    font-size:22px;
+    color:#2196F3;
 }
 
-.social-links a:hover{
-    transform:translateY(-4px);
-}
-
-.profile-info{
-    text-align:left;
-    margin-top:20px;
-}
-
+/* INFO */
 .profile-info div{
     margin:10px 0;
-    font-size:15px;
 }
 
-/* ================= RIGHT GRID ================= */
+/* RIGHT GRID */
 .right-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:25px;
+    gap:20px;
 }
-
 .box{
-    background:#fff;
-    border-radius:20px;
-    padding:22px;
-    box-shadow:0 15px 30px rgba(0,0,0,0.18);
-    transition:0.3s;
+    background:white;
+    border-radius:18px;
+    padding:20px;
 }
-
-.box:hover{
-    transform:translateY(-6px);
-}
-
 .box h3{
-    font-size:20px;
-    font-weight:700;
-    color:#1c7ed6;
+    margin-bottom:10px;
     border-left:5px solid #4CAF50;
-    padding-left:12px;
-    margin-bottom:12px;
+    padding-left:10px;
 }
-
-.box p,.box li{
-    font-size:15px;
-    line-height:1.6;
-}
-
-.box ul{
-    padding-left:20px;
-}
-
-/* ================= SKILLS ================= */
 .skills span{
     display:inline-block;
-    background:linear-gradient(135deg,#43cea2,#185a9d);
-    color:#fff;
     padding:8px 14px;
-    border-radius:18px;
-    margin:6px 6px 0 0;
-    font-size:14px;
-    font-weight:600;
+    border-radius:20px;
+    background:linear-gradient(135deg,#43cea2,#185a9d);
+    color:white;
+    margin:6px;
 }
 
-/* ================= RESPONSIVE ================= */
+/* MOBILE */
 @media(max-width:900px){
-    .container{
-        grid-template-columns:1fr;
-    }
-    .right-grid{
-        grid-template-columns:1fr;
-    }
+    .container{grid-template-columns:1fr}
+    .right-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
 
 <body>
 
-<!-- DARK MODE BUTTON -->
+<canvas id="stars"></canvas>
+
+<!-- DARK MODE -->
 <div class="dark-toggle" onclick="toggleDark()">
-    <i id="darkIcon" class="fas fa-moon"></i>
-    <span id="darkText">Dark Mode</span>
+    <i class="fas fa-moon"></i>
+    <span>Dark Mode</span>
 </div>
 
 <div class="container">
 
-<!-- PROFILE -->
 <div class="profile-box">
     <div class="photo-ring">
-        <img src="profile.jpeg" alt="Sakshith Reddy">
+        <img src="profile.jpeg">
     </div>
-
     <span class="role-badge">Aspiring Software Engineer</span>
-
     <h2>Sakshith Reddy Konala</h2>
     <p>B.Tech Student</p>
 
     <div class="social-links">
         <a href="https://github.com/sakshith2006" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
     </div>
 
     <div class="profile-info">
@@ -266,19 +173,18 @@ body.dark .dark-toggle{
     </div>
 </div>
 
-<!-- CONTENT -->
 <div class="right-grid">
 
 <div class="box">
 <h3>Profile Summary</h3>
-<p>Enthusiastic B.Tech student passionate about programming, data structures, and problem-solving with hands-on coding experience.</p>
+<p>Enthusiastic student passionate about programming and problem-solving.</p>
 </div>
 
 <div class="box">
 <h3>Education</h3>
 <ul>
-<li>Newton’s High School, Banswada</li>
-<li>Narayana Junior College, Hyderabad</li>
+<li>Newton’s High School</li>
+<li>Narayana Junior College</li>
 <li>Vasavi Engineering College</li>
 </ul>
 </div>
@@ -294,15 +200,15 @@ body.dark .dark-toggle{
 <div class="box">
 <h3>Projects</h3>
 <ul>
-<li>Personal Portfolio Website (HTML & CSS)</li>
-<li>College Hackathon Team Project</li>
+<li>Personal Portfolio Website</li>
+<li>Hackathon Team Project</li>
 </ul>
 </div>
 
 <div class="box">
 <h3>Certifications</h3>
 <ul>
-<li>NPTEL – The Joy of Computing using Python (Gold / Elite)</li>
+<li>NPTEL – Joy of Computing using Python (Gold)</li>
 </ul>
 </div>
 
@@ -310,8 +216,8 @@ body.dark .dark-toggle{
 <h3>Courses Learned</h3>
 <ul>
 <li>Programming in C</li>
-<li>Python Programming</li>
-<li>Java Programming</li>
+<li>Python</li>
+<li>Java</li>
 <li>Web Development</li>
 <li>DBMS</li>
 <li>Data Structures</li>
@@ -322,27 +228,38 @@ body.dark .dark-toggle{
 </div>
 
 <script>
+/* DARK MODE */
 function toggleDark(){
     document.body.classList.toggle("dark");
-    const icon=document.getElementById("darkIcon");
-    const text=document.getElementById("darkText");
-
-    if(document.body.classList.contains("dark")){
-        icon.className="fas fa-sun";
-        text.innerText="Light Mode";
-        localStorage.setItem("mode","dark");
-    }else{
-        icon.className="fas fa-moon";
-        text.innerText="Dark Mode";
-        localStorage.setItem("mode","light");
-    }
 }
 
-if(localStorage.getItem("mode")==="dark"){
-    document.body.classList.add("dark");
-    document.getElementById("darkIcon").className="fas fa-sun";
-    document.getElementById("darkText").innerText="Light Mode";
+/* STARS */
+const canvas=document.getElementById("stars");
+const ctx=canvas.getContext("2d");
+canvas.width=innerWidth;
+canvas.height=innerHeight;
+
+let stars=[];
+for(let i=0;i<200;i++){
+    stars.push({
+        x:Math.random()*canvas.width,
+        y:Math.random()*canvas.height,
+        r:Math.random()*1.5
+    });
 }
+function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle="white";
+    stars.forEach(s=>{
+        ctx.beginPath();
+        ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+        ctx.fill();
+        s.y+=0.2;
+        if(s.y>canvas.height) s.y=0;
+    });
+    requestAnimationFrame(draw);
+}
+draw();
 </script>
 
 </body>
