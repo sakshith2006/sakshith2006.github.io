@@ -12,9 +12,9 @@
 
 <style>
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
 }
 
 body{
@@ -28,32 +28,62 @@ body{
     transition:0.4s;
 }
 
-/* DARK MODE */
+/* ===== DARK MODE ===== */
 body.dark{
-    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    background:linear-gradient(135deg,#121212,#1e1e1e);
 }
 
-/* DARK MODE BUTTON (TOP RIGHT) */
-.toggle{
+body.dark .profile-box,
+body.dark .box{
+    background:#1f1f1f;
+    color:#eaeaea;
+}
+
+body.dark .box p,
+body.dark .box li,
+body.dark .profile-box p,
+body.dark .profile-info div{
+    color:#d0d0d0;
+}
+
+body.dark .box h3{
+    color:#90caf9;
+    border-left-color:#64b5f6;
+}
+
+/* ===== DARK MODE BUTTON (TOP RIGHT) ===== */
+.dark-toggle{
     position:fixed;
     top:20px;
     right:20px;
     background:#fff;
-    border:none;
-    padding:10px 16px;
-    border-radius:25px;
-    font-size:18px;
+    color:#222;
+    padding:10px 12px;
+    border-radius:14px;
     cursor:pointer;
-    box-shadow:0 6px 15px rgba(0,0,0,0.25);
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+    transition:0.3s;
     z-index:1000;
 }
 
-body.dark .toggle{
+.dark-toggle i{
+    font-size:20px;
+}
+
+.dark-toggle span{
+    display:block;
+    font-size:12px;
+    margin-top:4px;
+    font-weight:600;
+}
+
+body.dark .dark-toggle{
     background:#222;
     color:#fff;
 }
 
-/* MAIN CONTAINER */
+/* ===== MAIN CONTAINER ===== */
 .container{
     width:100%;
     max-width:1300px;
@@ -62,18 +92,13 @@ body.dark .toggle{
     gap:30px;
 }
 
-/* PROFILE BOX */
+/* ===== PROFILE BOX ===== */
 .profile-box{
     background:#fff;
     border-radius:22px;
     padding:30px;
     text-align:center;
     box-shadow:0 20px 40px rgba(0,0,0,0.25);
-}
-
-body.dark .profile-box{
-    background:#1e293b;
-    color:#e5e7eb;
 }
 
 /* PHOTO */
@@ -95,7 +120,7 @@ body.dark .profile-box{
     padding:4px;
 }
 
-/* ROLE BADGE */
+/* ROLE */
 .role-badge{
     margin-top:18px;
     background:linear-gradient(135deg,#4CAF50,#2196F3);
@@ -114,18 +139,18 @@ body.dark .profile-box{
 }
 
 .profile-box p{
-    margin-top:4px;
+    margin-top:5px;
     font-weight:500;
 }
 
 /* SOCIAL */
 .social-links{
-    margin:14px 0 20px;
+    margin:15px 0;
 }
 
 .social-links a{
-    width:42px;
-    height:42px;
+    width:40px;
+    height:40px;
     display:inline-flex;
     justify-content:center;
     align-items:center;
@@ -133,7 +158,7 @@ body.dark .profile-box{
     margin:0 6px;
     background:linear-gradient(135deg,#4CAF50,#2196F3);
     color:#fff;
-    font-size:20px;
+    font-size:18px;
 }
 
 /* INFO */
@@ -144,10 +169,15 @@ body.dark .profile-box{
 
 .profile-info div{
     margin:10px 0;
-    font-size:15px;
+    font-size:14.5px;
 }
 
-/* RIGHT GRID */
+.profile-info i{
+    margin-right:8px;
+    color:#2196F3;
+}
+
+/* ===== RIGHT GRID ===== */
 .right-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -159,27 +189,38 @@ body.dark .profile-box{
     border-radius:20px;
     padding:22px;
     box-shadow:0 15px 30px rgba(0,0,0,0.18);
+    transition:0.3s;
 }
 
-body.dark .box{
-    background:#1e293b;
-    color:#e5e7eb;
+.box:hover{
+    transform:translateY(-6px);
 }
 
 .box h3{
-    color:#1c7ed6;
+    font-size:18px;
+    margin-bottom:12px;
     border-left:5px solid #4CAF50;
-    padding-left:12px;
-    margin-bottom:14px;
+    padding-left:10px;
 }
 
+.box p, .box li{
+    font-size:14.5px;
+    line-height:1.6;
+}
+
+.box ul{
+    padding-left:18px;
+}
+
+/* SKILLS */
 .skills span{
     display:inline-block;
     background:linear-gradient(135deg,#43cea2,#185a9d);
     color:#fff;
-    padding:9px 16px;
-    border-radius:20px;
+    padding:7px 14px;
+    border-radius:18px;
     margin:6px 6px 0 0;
+    font-size:13px;
 }
 
 /* RESPONSIVE */
@@ -197,13 +238,17 @@ body.dark .box{
 <body>
 
 <!-- DARK MODE BUTTON -->
-<button class="toggle" onclick="toggleDark()">🌙</button>
+<div class="dark-toggle" onclick="toggleDark()">
+    <i id="darkIcon" class="fas fa-moon"></i>
+    <span id="darkText">Dark Mode</span>
+</div>
 
 <div class="container">
 
+<!-- PROFILE -->
 <div class="profile-box">
     <div class="photo-ring">
-        <img src="profile.jpeg">
+        <img src="profile.jpeg" alt="Sakshith Reddy">
     </div>
 
     <span class="role-badge">Aspiring Software Engineer</span>
@@ -213,83 +258,92 @@ body.dark .box{
 
     <div class="social-links">
         <a href="https://github.com/sakshith2006" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
     </div>
 
     <div class="profile-info">
-        <div>📧 sakshithreddykonala@gmail.com</div>
-        <div>🎓 B.Tech (2nd Year)</div>
-        <div>🏫 Vasavi Engineering College</div>
-        <div>📍 Hyderabad, India</div>
+        <div><i class="fas fa-envelope"></i> sakshithreddykonala@gmail.com</div>
+        <div><i class="fas fa-user-graduate"></i> B.Tech (2nd Year)</div>
+        <div><i class="fas fa-university"></i> Vasavi Engineering College</div>
+        <div><i class="fas fa-location-dot"></i> Hyderabad, India</div>
     </div>
 </div>
 
+<!-- RIGHT -->
 <div class="right-grid">
-    <div class="box">
-        <h3>Profile Summary</h3>
-        <p>Enthusiastic B.Tech student passionate about programming and problem solving.</p>
-    </div>
 
-    <div class="box">
-        <h3>Education</h3>
-        <ul>
-            <li>Newton’s High School</li>
-            <li>Narayana Junior College</li>
-            <li>Vasavi Engineering College</li>
-        </ul>
-    </div>
-
-    <div class="box">
-        <h3>Technical Skills</h3>
-        <div class="skills">
-            <span>C</span><span>Python</span><span>Java</span><span>HTML</span><span>DBMS</span>
-        </div>
-    </div>
-
-    <div class="box">
-        <h3>Projects</h3>
-        <ul>
-            <li>Personal Portfolio Website</li>
-            <li>Hackathon Team Project</li>
-        </ul>
-    </div>
-
-    <div class="box">
-        <h3>Certifications</h3>
-        <ul>
-            <li>NPTEL – Joy of Computing using Python</li>
-        </ul>
-    </div>
-
-    <div class="box">
-        <h3>Courses Learned</h3>
-        <ul>
-            <li>C</li><li>Python</li><li>Java</li><li>Web Development</li>
-        </ul>
-    </div>
+<div class="box">
+<h3>Profile Summary</h3>
+<p>Enthusiastic B.Tech student passionate about programming, databases, and problem-solving.</p>
 </div>
 
+<div class="box">
+<h3>Education</h3>
+<ul>
+<li>Newton’s High School, Banswada</li>
+<li>Narayana Junior College, Hyderabad</li>
+<li>Vasavi Engineering College</li>
+</ul>
+</div>
+
+<div class="box">
+<h3>Technical Skills</h3>
+<div class="skills">
+<span>C</span><span>Python</span><span>Java</span>
+<span>HTML</span><span>DBMS</span><span>Data Structures</span>
+</div>
+</div>
+
+<div class="box">
+<h3>Projects</h3>
+<ul>
+<li>Personal Portfolio Website</li>
+<li>Hackathon Team Project</li>
+</ul>
+</div>
+
+<div class="box">
+<h3>Certifications</h3>
+<ul>
+<li>NPTEL – Joy of Computing using Python (Gold / Elite)</li>
+</ul>
+</div>
+
+<div class="box">
+<h3>Courses Learned</h3>
+<ul>
+<li>Programming in C</li>
+<li>Python Programming</li>
+<li>Java Programming</li>
+<li>Web Development</li>
+<li>DBMS</li>
+<li>Data Structures</li>
+</ul>
+</div>
+
+</div>
 </div>
 
 <script>
-const body = document.body;
-const btn = document.querySelector(".toggle");
+function toggleDark(){
+    document.body.classList.toggle("dark");
 
-// load saved theme
-if(localStorage.getItem("theme")==="dark"){
-    body.classList.add("dark");
-    btn.textContent="☀️";
+    const icon = document.getElementById("darkIcon");
+    const text = document.getElementById("darkText");
+
+    if(document.body.classList.contains("dark")){
+        icon.className = "fas fa-sun";
+        text.innerText = "Light Mode";
+        localStorage.setItem("mode","dark");
+    }else{
+        icon.className = "fas fa-moon";
+        text.innerText = "Dark Mode";
+        localStorage.setItem("mode","light");
+    }
 }
 
-function toggleDark(){
-    body.classList.toggle("dark");
-    if(body.classList.contains("dark")){
-        localStorage.setItem("theme","dark");
-        btn.textContent="☀️";
-    }else{
-        localStorage.setItem("theme","light");
-        btn.textContent="🌙";
-    }
+/* KEEP MODE AFTER REFRESH */
+if(localStorage.getItem("mode")==="dark"){
+    toggleDark();
 }
 </script>
 
