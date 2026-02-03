@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sakshith Reddy | Portfolio</title>
 
 <!-- Google Font -->
@@ -29,7 +28,7 @@ body{
     transition:0.4s;
 }
 
-/* DARK MODE BACKGROUND */
+/* DARK MODE BODY */
 body.dark{
     background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
 }
@@ -37,18 +36,25 @@ body.dark{
 /* DARK MODE TOGGLE */
 .toggle{
     position:fixed;
-    bottom:25px;
-    right:25px;
+    top:18px;
+    right:18px;
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    border:none;
     background:#fff;
     color:#111;
-    border:none;
-    padding:12px 18px;
-    border-radius:25px;
-    font-weight:600;
+    font-size:20px;
     cursor:pointer;
     box-shadow:0 8px 20px rgba(0,0,0,0.3);
     z-index:1000;
+    transition:0.3s;
 }
+
+.toggle:hover{
+    transform:scale(1.1);
+}
+
 body.dark .toggle{
     background:#111;
     color:#fff;
@@ -72,9 +78,10 @@ body.dark .toggle{
     box-shadow:0 20px 40px rgba(0,0,0,0.25);
     transition:0.4s;
 }
+
 body.dark .profile-box{
     background:#1e293b;
-    color:#e5e7eb;
+    color:#fff;
 }
 
 /* PHOTO */
@@ -85,7 +92,9 @@ body.dark .profile-box{
     padding:6px;
     border-radius:50%;
     background:linear-gradient(135deg,#4CAF50,#2196F3);
+    box-shadow:0 0 30px rgba(33,150,243,0.6);
 }
+
 .photo-ring img{
     width:100%;
     height:100%;
@@ -107,14 +116,29 @@ body.dark .profile-box{
     display:inline-block;
 }
 
-/* TEXT */
-.profile-box h2{margin-top:18px;font-size:24px;}
-.profile-box p{margin-top:4px;font-weight:500;}
+/* NAME */
+.profile-box h2{
+    margin-top:18px;
+    font-size:24px;
+    font-weight:700;
+}
+
+/* SUBTITLE */
+.profile-box p{
+    margin-top:4px;
+    font-weight:500;
+    color:#444;
+}
+
+body.dark .profile-box p{
+    color:#cbd5e1;
+}
 
 /* SOCIAL */
 .social-links{
     margin:14px 0 20px;
 }
+
 .social-links a{
     display:inline-flex;
     justify-content:center;
@@ -128,21 +152,24 @@ body.dark .profile-box{
     font-size:20px;
     transition:0.3s;
 }
+
 .social-links a:hover{
     transform:translateY(-4px);
 }
 
-/* INFO */
+/* PROFILE INFO */
 .profile-info{
     text-align:left;
     margin-top:20px;
 }
+
 .profile-info div{
     margin:10px 0;
     font-size:15px;
 }
+
 .profile-info i{
-    color:#2196F3;
+    color:#4CAF50;
     margin-right:8px;
 }
 
@@ -159,17 +186,19 @@ body.dark .profile-box{
     border-radius:20px;
     padding:22px;
     box-shadow:0 15px 30px rgba(0,0,0,0.18);
-    transition:0.4s;
+    transition:0.3s;
 }
-body.dark .box{
-    background:#1e293b;
-    color:#e5e7eb;
-}
+
 .box:hover{
     transform:translateY(-8px);
 }
 
-/* TITLE */
+body.dark .box{
+    background:#1e293b;
+    color:#e5e7eb;
+}
+
+/* BOX TITLE */
 .box h3{
     color:#1c7ed6;
     border-left:5px solid #4CAF50;
@@ -177,8 +206,11 @@ body.dark .box{
     margin-bottom:14px;
     font-size:20px;
 }
-body.dark .box h3{
-    color:#93c5fd;
+
+/* CONTENT */
+.box p, .box li{
+    font-size:15px;
+    line-height:1.6;
 }
 
 /* SKILLS */
@@ -194,97 +226,106 @@ body.dark .box h3{
 
 /* RESPONSIVE */
 @media(max-width:900px){
-    .container{grid-template-columns:1fr;}
-    .right-grid{grid-template-columns:1fr;}
+    .container{
+        grid-template-columns:1fr;
+    }
+    .right-grid{
+        grid-template-columns:1fr;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<button class="toggle" onclick="toggleDark()">🌙 Dark Mode</button>
+<!-- DARK MODE BUTTON -->
+<button class="toggle" onclick="toggleDark()">🌙</button>
 
 <div class="container">
 
-<!-- PROFILE -->
-<div class="profile-box">
-    <div class="photo-ring">
-        <img src="profile.jpeg" alt="Sakshith Reddy">
+    <!-- PROFILE -->
+    <div class="profile-box">
+        <div class="photo-ring">
+            <img src="profile.jpeg" alt="Sakshith Reddy">
+        </div>
+
+        <span class="role-badge">
+            <i class="fas fa-laptop-code"></i> Aspiring Software Engineer
+        </span>
+
+        <h2>Sakshith Reddy Konala</h2>
+        <p>B.Tech Student</p>
+
+        <div class="social-links">
+            <a href="https://github.com/sakshith2006" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+
+        <div class="profile-info">
+            <div><i class="fas fa-envelope"></i> sakshithreddykonala@gmail.com</div>
+            <div><i class="fas fa-user-graduate"></i> B.Tech (2nd Year)</div>
+            <div><i class="fas fa-university"></i> Vasavi Engineering College</div>
+            <div><i class="fas fa-location-dot"></i> Hyderabad, India</div>
+        </div>
     </div>
 
-    <span class="role-badge">
-        <i class="fas fa-laptop-code"></i> Aspiring Software Engineer
-    </span>
+    <!-- RIGHT -->
+    <div class="right-grid">
 
-    <h2>Sakshith Reddy Konala</h2>
-    <p>B.Tech Student</p>
+        <div class="box">
+            <h3><i class="fas fa-user"></i> Profile Summary</h3>
+            <p>Enthusiastic B.Tech student passionate about programming, databases, and problem-solving.</p>
+        </div>
 
-    <div class="social-links">
-        <a href="https://github.com/sakshith2006" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <div class="box">
+            <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+            <ul>
+                <li>Newton’s High School, Banswada</li>
+                <li>Narayana Junior College, Hyderabad</li>
+                <li>Vasavi Engineering College</li>
+            </ul>
+        </div>
+
+        <div class="box">
+            <h3><i class="fas fa-code"></i> Technical Skills</h3>
+            <div class="skills">
+                <span>C</span>
+                <span>Python</span>
+                <span>Java</span>
+                <span>HTML</span>
+                <span>DBMS</span>
+                <span>Data Structures</span>
+            </div>
+        </div>
+
+        <div class="box">
+            <h3><i class="fas fa-diagram-project"></i> Projects</h3>
+            <ul>
+                <li>Personal Portfolio Website</li>
+                <li>Hackathon Team Project</li>
+            </ul>
+        </div>
+
+        <div class="box">
+            <h3><i class="fas fa-certificate"></i> Certifications</h3>
+            <ul>
+                <li>NPTEL – Joy of Computing using Python (Gold / Elite)</li>
+            </ul>
+        </div>
+
+        <div class="box">
+            <h3><i class="fas fa-book"></i> Courses Learned</h3>
+            <ul>
+                <li>Programming in C</li>
+                <li>Python Programming</li>
+                <li>Java Programming</li>
+                <li>Web Development</li>
+                <li>DBMS</li>
+                <li>Data Structures</li>
+            </ul>
+        </div>
+
     </div>
-
-    <div class="profile-info">
-        <div><i class="fas fa-envelope"></i> sakshithreddykonala@gmail.com</div>
-        <div><i class="fas fa-user-graduate"></i> B.Tech (2nd Year)</div>
-        <div><i class="fas fa-university"></i> Vasavi Engineering College</div>
-        <div><i class="fas fa-location-dot"></i> Hyderabad, India</div>
-    </div>
-</div>
-
-<!-- RIGHT -->
-<div class="right-grid">
-
-<div class="box">
-<h3><i class="fas fa-user"></i> Profile Summary</h3>
-<p>Enthusiastic B.Tech student passionate about programming and problem solving.</p>
-</div>
-
-<div class="box">
-<h3><i class="fas fa-graduation-cap"></i> Education</h3>
-<ul>
-<li>Newton’s High School, Banswada</li>
-<li>Narayana Junior College, Hyderabad</li>
-<li>Vasavi Engineering College</li>
-</ul>
-</div>
-
-<div class="box">
-<h3><i class="fas fa-code"></i> Technical Skills</h3>
-<div class="skills">
-<span>C</span><span>Python</span><span>Java</span>
-<span>HTML</span><span>DBMS</span><span>Data Structures</span>
-</div>
-</div>
-
-<div class="box">
-<h3><i class="fas fa-diagram-project"></i> Projects</h3>
-<ul>
-<li>Personal Portfolio Website</li>
-<li>Hackathon Team Project</li>
-</ul>
-</div>
-
-<div class="box">
-<h3><i class="fas fa-certificate"></i> Certifications</h3>
-<ul>
-<li>NPTEL – Joy of Computing using Python (Gold / Elite)</li>
-</ul>
-</div>
-
-<div class="box">
-<h3><i class="fas fa-book"></i> Courses Learned</h3>
-<ul>
-<li>Programming in C</li>
-<li>Python</li>
-<li>Java</li>
-<li>Web Development</li>
-<li>DBMS</li>
-<li>Data Structures</li>
-</ul>
-</div>
-
-</div>
 </div>
 
 <script>
