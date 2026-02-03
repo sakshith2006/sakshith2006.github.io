@@ -108,7 +108,13 @@ body.dark .box{
     background:#1f1f1f;
     color:#eee;
 }
-
+/* ⭐ PHOTO + STARS (ONLY ADDITION) */
+.photo-wrapper{
+    position:relative;
+    width:180px;
+    height:180px;
+    margin:auto;
+}
 /* PHOTO */
 .photo-ring{
     width:160px;
@@ -128,7 +134,22 @@ body.dark .box{
     padding:4px;
     object-fit:cover;
 }
+/* GOLDEN STARS */
+.gold-star{
+    position:absolute;
+    color:gold;
+    font-size:22px;
+    animation:floatStar 3s ease-in-out infinite;
+}
 
+.star1{ top:-8px; left:20px; }
+.star2{ top:25px; right:-10px; animation-delay:1s; }
+.star3{ bottom:-8px; left:60px; animation-delay:2s; }
+
+@keyframes floatStar{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-6px); }
+}
 /* ROLE BADGE */
 .role-badge{
     margin-top:16px;
@@ -232,10 +253,16 @@ body.dark .box{
 
 <div class="profile-box">
 
-    <div class="photo-ring">
-        <img src="profile.jpeg" alt="Sakshith Reddy">
-    </div>
+    <!-- ⭐ ONLY CHANGE HERE -->
+    <div class="photo-wrapper">
+        <i class="fas fa-star gold-star star1"></i>
+        <i class="fas fa-star gold-star star2"></i>
+        <i class="fas fa-star gold-star star3"></i>
 
+        <div class="photo-ring">
+            <img src="profile.jpeg" alt="Sakshith Reddy">
+        </div>
+    </div>
     <span class="role-badge">
         <i class="fas fa-laptop-code"></i> Aspiring Software Engineer
     </span>
